@@ -28,6 +28,7 @@ public class DarkSoulsController
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("selected.jsp");
 		mv.addObject("selectedBoss", bossDAO.getFindBoss(selected));
+		mv.addObject("bossList", bossDAO.getBosses());
 		
 		return mv;	
 	}

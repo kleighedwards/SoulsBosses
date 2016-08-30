@@ -3,6 +3,8 @@
 <html>
 <head>
 	<title>Souls Bosses</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	
 </head>
 <body>
 	<p>${firstBoss}</p>
