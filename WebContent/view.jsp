@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>${result.name}</title>
+	<title>Souls Bosses</title>
 </head>
 <body>
-	
+	<p>${result}</p>
 </body>
 </html>

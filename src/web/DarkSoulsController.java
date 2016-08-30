@@ -13,11 +13,11 @@ public class DarkSoulsController
 	private BossDAO bossDAO;
 	
 	@RequestMapping("Souls.do")
-	public ModelAndView findBoss(@RequestParam("Light the Bonfire") String bonfire)
+	public ModelAndView findBoss(@RequestParam("firstBoss") String bonfire)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view.jsp");
-		mv.addObject("result", bossDAO.getBossByName());
+		mv.addObject("result", bossDAO.getFirstBoss());
 		
 		return mv;	
 	}

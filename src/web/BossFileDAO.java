@@ -14,7 +14,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 public class BossFileDAO implements BossDAO
 {
-	private static final String FILE_NAME="/WEB-INF/boss.csv";
+	private static final String FILE_NAME="/WEB-INF/bosses.csv";
 	private List<Boss> bosses = new ArrayList<>();
 	
 	@Autowired 
@@ -34,17 +34,21 @@ public class BossFileDAO implements BossDAO
 			) {
 			String line;
 			while ((line = buf.readLine()) != null) {
-				String[] tokens = line.split("|");
+				String[] tokens = line.split(":");
 				String name = tokens[0];
 				String location = tokens[1];
-				String summons = tokens[4];
-				String weapon = tokens[5];
-				String weakness = tokens[6];
-				String optional = tokens[7];
+				String summons = tokens[2];
+				String weapon = tokens[3];
+				String weakness = tokens[4];
+				String optional = tokens[5];
 				bosses.add(new Boss( name, location, summons, weapon, weakness, optional));
 			}
 		} catch (Exception e) {
 			System.err.println(e);
+		}
+		
+		for (Boss boss : bosses) {
+			System.out.println(boss);
 		}
 	}
 
@@ -52,6 +56,12 @@ public class BossFileDAO implements BossDAO
 	public Boss getBossByName() 
 	{
 		return null;
+	}
+
+	@Override
+	public Boss getFirstBoss() 
+	{
+		return bosses.get(0);
 	}
 	
 }
