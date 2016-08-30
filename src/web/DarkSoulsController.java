@@ -3,6 +3,7 @@ package web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -22,11 +23,11 @@ public class DarkSoulsController
 	}
 	
 	@RequestMapping("DropDown.do")
-	public ModelAndView findBoss(String menu)
+	public ModelAndView findBoss(@RequestParam("menu") String selected)
 	{
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("view.jsp");
-		mv.addObject("bossList", bossDAO.getBosses());
+		mv.setViewName("selected.jsp");
+		mv.addObject("selectedBoss", bossDAO.getFindBoss(selected));
 		
 		return mv;	
 	}

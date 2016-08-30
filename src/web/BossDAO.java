@@ -6,4 +6,5 @@ public interface BossDAO
 {
 	public List<Boss> getBosses();
 	public Boss getFirstBoss();
+	public Boss getFindBoss(String name);
 }

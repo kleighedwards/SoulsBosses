@@ -7,14 +7,13 @@
 <body>
 	<p>${firstBoss}</p>
 		
-	${bossList[1].name}
-		
-	<form action="DropDown.do" method="POST">
+	<form action="DropDown.do" method="GET">
 		<select name="menu">
 			<c:forEach var="boss" items="${bossList}">
 			<option value="${boss.name}">${boss.name}</option>
 			</c:forEach>
 		</select>
+		<input type="submit" value="Feeble Cursed One" />
 	</form>
 	
 </body>

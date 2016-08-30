@@ -63,5 +63,21 @@ public class BossFileDAO implements BossDAO
 	{
 		return bosses.get(0);
 	}
+
+	@Override
+	public Boss getFindBoss(String name) {
+		Boss b = null;
+		
+		for(Boss boss : bosses)
+		{
+			if (boss.getName().equals(name))
+			{
+				b = boss;
+				break;
+			}
+		}
+			
+			return b;
+	}
 	
 }
