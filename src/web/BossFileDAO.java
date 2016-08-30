@@ -53,9 +53,9 @@ public class BossFileDAO implements BossDAO
 	}
 
 	@Override
-	public Boss getBossByName() 
+	public List<Boss> getBosses() 
 	{
-		return null;
+		return bosses;
 	}
 
 	@Override

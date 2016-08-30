@@ -1,7 +1,9 @@
 package web;
 
+import java.util.List;
+
 public interface BossDAO 
 {
-	public Boss getBossByName();
+	public List<Boss> getBosses();
 	public Boss getFirstBoss();
 }
