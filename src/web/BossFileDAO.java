@@ -35,7 +35,7 @@ public class BossFileDAO implements BossDAO
 			String line;
 			while ((line = buf.readLine()) != null) {
 				String[] tokens = line.split(":");
-				String number = tokens[0];
+				int number = Integer.parseInt(tokens[0]);
 				String name = tokens[1];
 				String location = tokens[2];
 				String summons = tokens[3];
@@ -63,6 +63,12 @@ public class BossFileDAO implements BossDAO
 	public Boss getFirstBoss() 
 	{
 		return bosses.get(0);
+	}
+
+	@Override
+	public Boss getBossByNumber(int number) 
+	{
+		return bosses.get(number);
 	}
 
 	@Override

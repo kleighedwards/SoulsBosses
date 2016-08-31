@@ -18,16 +18,19 @@
 	
 	<img class="bossImage" src="BossImages/0.jpg" alt="Iudex Gundyr"/>
 	
-	<div class="bossSelect">	
+	<div class="bossSelect">
 		<form action="DropDown.do" method="GET">
 			<select name="menu">
 				<c:forEach var="boss" items="${bossList}">
 				<option value="${boss.name}">${boss.name}</option>
 				</c:forEach>
 			</select>
-			<input type="submit" value="Feeble Cursed One" />
+			<input type="submit" name="button" value="Feeble Cursed One"/><br>
+			<input type="submit" name="button" value="Previous"/>
+			<input type="submit" name="button" value="Next"/>
 		</form>
 	</div>
 	
+	${oldBoss}
 </body>
 </html>
