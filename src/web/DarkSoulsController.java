@@ -45,16 +45,32 @@ public class DarkSoulsController
 		{
 			//int currentBossNum = bossDAO.getFindBoss(selected).getNumber();
 			int currentBossNum = boss.getNumber();
-			boss = bossDAO.getBossByNumber(currentBossNum - 1);
-			mv.addObject("oldBoss", boss);	
+			if ((currentBossNum - 1) >= 0)
+			{				
+				boss = bossDAO.getBossByNumber(currentBossNum - 1);
+				mv.addObject("oldBoss", boss);	
+			}
+			if ((currentBossNum - 1) < 0)
+			{
+				boss = bossDAO.getBossByNumber(18);
+				mv.addObject("oldBoss", boss);	
+			}
 		}
 		
 		if (button.equals("Next"))
 		{
 			//int currentBossNum = bossDAO.getFindBoss(selected).getNumber();
 			int currentBossNum = boss.getNumber();
-			boss = bossDAO.getBossByNumber(currentBossNum + 1);
-			mv.addObject("oldBoss", boss);
+			if ((currentBossNum + 1 ) <= 18)
+			{
+				boss = bossDAO.getBossByNumber(currentBossNum + 1);
+				mv.addObject("oldBoss", boss);
+			}
+			if ((currentBossNum + 1) > 18)
+			{
+				boss = bossDAO.getBossByNumber(0);
+				mv.addObject("oldBoss", boss);
+			}
 		}
 		
 		if (button.equals("Feeble Cursed One"))

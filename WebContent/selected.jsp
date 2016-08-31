@@ -30,6 +30,6 @@
 			<input type="submit" name="button" value="Next"/>
 		</form>
 	</div>
-	${oldBoss}
+	
 </body>
 </html>
