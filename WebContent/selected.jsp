@@ -7,16 +7,27 @@
 
 </head>
 <body>
-	${selectedBoss}
+	<div class="bossInfo">
+		<p>Name: ${selectedBoss.name}</p>
+		<p>Location: ${selectedBoss.location}</p>
+		<p>Summons: ${selectedBoss.summons}</p>
+		<p>Transposed Weapons: ${selectedBoss.weapon}</p>
+		<p>Weaknesses: ${selectedBoss.weaknesses}</p>
+		<p>Optional: ${selectedBoss.optional}</p>
+	</div>
 	
-	<form action="DropDown.do" method="GET">
-		<select name="menu">
-			<c:forEach var="boss" items="${bossList}">
-			<option value="${boss.name}">${boss.name}</option>
-			</c:forEach>
-		</select>
-		<input type="submit" value="Feeble Cursed One" />
-	</form>
+	<img class="bossImage" src="BossImages/${selectedBoss.number}.jpg" alt="Your Boss Goes Here"/>
+	
+	<div class="bossSelect">
+		<form action="DropDown.do" method="GET">
+			<select name="menu">
+				<c:forEach var="boss" items="${bossList}">
+				<option value="${boss.name}">${boss.name}</option>
+				</c:forEach>
+			</select>
+			<input type="submit" value="Feeble Cursed One" />
+		</form>
+	</div>
 	
 </body>
 </html>

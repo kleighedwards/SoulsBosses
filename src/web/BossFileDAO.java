@@ -35,13 +35,14 @@ public class BossFileDAO implements BossDAO
 			String line;
 			while ((line = buf.readLine()) != null) {
 				String[] tokens = line.split(":");
-				String name = tokens[0];
-				String location = tokens[1];
-				String summons = tokens[2];
-				String weapon = tokens[3];
-				String weakness = tokens[4];
-				String optional = tokens[5];
-				bosses.add(new Boss( name, location, summons, weapon, weakness, optional));
+				String number = tokens[0];
+				String name = tokens[1];
+				String location = tokens[2];
+				String summons = tokens[3];
+				String weapon = tokens[4];
+				String weakness = tokens[5];
+				String optional = tokens[6];
+				bosses.add(new Boss(number, name, location, summons, weapon, weakness, optional));
 			}
 		} catch (Exception e) {
 			System.err.println(e);

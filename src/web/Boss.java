@@ -2,6 +2,7 @@ package web;
 
 public class Boss 
 {
+	private String number;
 	private String name;
 	private String location;
 	private String weapon;
@@ -11,7 +12,7 @@ public class Boss
 	
 	public Boss(){}
 	
-	public Boss(String name, String location, String summons, String weapon,
+	public Boss(String number, String name, String location, String summons, String weapon,
 				String weaknesses, String optional)
 	{
 		this.name = name;
@@ -20,6 +21,7 @@ public class Boss
 		this.optional = optional;
 		this.summons = summons;
 		this.weaknesses = weaknesses;
+		this.number = number;
 	}
 	
 	public String getName() 
@@ -66,7 +68,7 @@ public class Boss
 	{
 		return summons;
 	}
-	
+
 	public void setSummons(String summons) 
 	{
 		this.summons = summons;
@@ -81,6 +83,17 @@ public class Boss
 	{
 		this.weaknesses = weaknesses;
 	}
+	
+	public String getNumber() 
+	{
+		return number;
+	}
+
+	public void setNumber(String number) 
+	{
+		this.number = number;
+	}
+	
 
 	@Override
 	public String toString() {

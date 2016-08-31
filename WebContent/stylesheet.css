@@ -1,0 +1,25 @@
+body 
+{
+	font-family: Fantasy;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.bossInfo
+{
+	margin: auto;
+	text-align: center;
+}
+
+.bossSelect
+{
+	margin: auto;
+	text-align: center;
+	align: center;
+}
+
+.bossImage
+{
+	resize: 35%;
+	align: center;
+}

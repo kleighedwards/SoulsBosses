@@ -7,16 +7,27 @@
 	
 </head>
 <body>
-	<p>${firstBoss}</p>
-		
-	<form action="DropDown.do" method="GET">
-		<select name="menu">
-			<c:forEach var="boss" items="${bossList}">
-			<option value="${boss.name}">${boss.name}</option>
-			</c:forEach>
-		</select>
-		<input type="submit" value="Feeble Cursed One" />
-	</form>
+	<div class="bossInfo">
+		<p>Name: ${firstBoss.name}</p>
+		<p>Location: ${firstBoss.location}</p>
+		<p>Summons: ${firstBoss.summons}</p>
+		<p>Transposed Weapons: ${firstBoss.weapon}</p>
+		<p>Weaknesses: ${firstBoss.weaknesses}</p>
+		<p>Optional: ${firstBoss.optional}</p>
+	</div>
+	
+	<img class="bossImage" src="BossImages/0.jpg" alt="Iudex Gundyr"/>
+	
+	<div class="bossSelect">	
+		<form action="DropDown.do" method="GET">
+			<select name="menu">
+				<c:forEach var="boss" items="${bossList}">
+				<option value="${boss.name}">${boss.name}</option>
+				</c:forEach>
+			</select>
+			<input type="submit" value="Feeble Cursed One" />
+		</form>
+	</div>
 	
 </body>
 </html>
